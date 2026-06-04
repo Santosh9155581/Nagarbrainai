@@ -5,58 +5,58 @@ NagarBrain AI is an advanced, AI-driven urban orchestration platform designed to
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-### 🚦 1. Adaptive Traffic Control & Signal Preemption
+### 1. Adaptive Traffic Control & Signal Preemption
 * **YOLOv8 Object Detection**: Uses computer vision to analyze video streams from traffic lanes in real-time, detecting cars, trucks, buses, motorcycles, and bicycles.
 * **Dynamic Signal Timing**: Automatically calculates vehicle density (Low, Medium, High) and adjusts green light durations accordingly.
 * **Emergency Vehicle Preemption**: Instantly identifies incoming ambulances using a specialized classification model, preempting the active signal cycle to give the ambulance immediate green light priority.
 
-### 🚑 2. Emergency dispatch & Routing
+### 2. Emergency dispatch & Routing
 * **Ambulance Booking**: Citizens can request an ambulance directly from their location on an interactive map.
 * **Admin Dispatch Center**: Administrators can view real-time ambulance requests, locate the nearest active emergency station, and dispatch vehicles.
 * **Route Optimization**: Uses Google Maps API to chart optimal navigation paths for dispatched emergency vehicles.
 
-### 📝 3. Citizen Incident Reporting
+### 3. Citizen Incident Reporting
 * **Interactive Map Reports**: Citizens can report infrastructure anomalies (e.g., garbage dumps, accidents, potholes, water logging) directly onto the map.
 * **Gemini AI Verification**: Integrates Google Gemini API to analyze citizen descriptions, categorize reports, and verify the validity of reports.
 * **Moderation Panel**: Admins can review active reports, coordinate field teams, and mark incidents as resolved.
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 NagarBrain AI is structured as a microservices application:
 
-1. **Frontend (`/frontend`)**:
-   * built with: React (Vite), Tailwind CSS, Lucide icons, and `@react-google-maps/api`.
-   * Port: `5173` (Vite Default)
+1. **Frontend (/frontend)**:
+   * Built with: React (Vite), Tailwind CSS, Lucide icons, and @react-google-maps/api.
+   * Port: 5173 (Vite Default)
 
-2. **Core Backend (`/backend`)**:
+2. **Core Backend (/backend)**:
    * Built with: Node.js, Express, MongoDB (Mongoose).
    * **In-Memory Fallback**: If a local MongoDB instance is not detected, the backend automatically falls back to an in-memory data store, allowing instant testing without database setup!
-   * Port: `5000`
+   * Port: 5000
 
-3. **YOLO Computer Vision Backend (`/yolo_backend`)**:
+3. **YOLO Computer Vision Backend (/yolo_backend)**:
    * Built with: Python, FastAPI, Uvicorn, Ultralytics YOLOv8, and OpenCV.
-   * Port: `8000`
+   * Port: 8000
 
 ---
 
-## ⚙️ Environment Variables Setup
+## Environment Variables Setup
 
 Configure the following files before running the application:
 
-### Node.js Backend (`backend/.env`)
-Create a `.env` file inside the `backend/` directory:
+### Node.js Backend (backend/.env)
+Create a .env file inside the backend/ directory:
 ```env
 PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/nagarbrain_traffic
 HF_API_TOKEN=your_hugging_face_token_here
 ```
 
-### React Frontend (`frontend/.env`)
-Create a `.env` file inside the `frontend/` directory (or edit the pre-created template):
+### React Frontend (frontend/.env)
+Create a .env file inside the frontend/ directory (or edit the pre-created template):
 ```env
 VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
@@ -64,7 +64,7 @@ VITE_GEMINI_API_KEY=your_gemini_api_key_here
 
 ---
 
-## 🛠️ Installation & Getting Started
+## Installation & Getting Started
 
 Open three separate terminals at the root of the project:
 
@@ -85,7 +85,7 @@ Once installed, start the server:
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
-Check health on: `http://localhost:8000/health`
+Check health on: http://localhost:8000/health
 
 ### 2. Start Core Node.js Backend
 Navigate to the Node.js API server:
@@ -94,7 +94,7 @@ cd backend
 npm install
 npm start
 ```
-*Starts on: `http://localhost:5000`*
+*Starts on: http://localhost:5000*
 
 ### 3. Start React Frontend
 Navigate to the frontend client:
@@ -103,11 +103,11 @@ cd frontend
 npm install
 npm run dev
 ```
-*Starts on: `http://localhost:5173` (Open this in your web browser)*
+*Starts on: http://localhost:5173 (Open this in your web browser)*
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 nagarbrain/
