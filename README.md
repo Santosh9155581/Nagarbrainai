@@ -28,18 +28,18 @@ NagarBrain AI is an advanced, AI-driven urban orchestration platform designed to
 
 NagarBrain AI is structured as a microservices application:
 
-1. **Frontend (/frontend)**:
-   * Built with: React (Vite), Tailwind CSS, Lucide icons, and @react-google-maps/api.
-   * Port: 5173 (Vite Default)
+1. **Frontend (`/frontend`)**:
+   * Built with: React (Vite), Tailwind CSS, Lucide icons, and `@react-google-maps/api`.
+   * Port: `5173` (Vite Default)
 
-2. **Core Backend (/backend)**:
+2. **Core Backend (`/backend`)**:
    * Built with: Node.js, Express, MongoDB (Mongoose).
    * **In-Memory Fallback**: If a local MongoDB instance is not detected, the backend automatically falls back to an in-memory data store, allowing instant testing without database setup!
-   * Port: 5000
+   * Port: `5000`
 
-3. **YOLO Computer Vision Backend (/yolo_backend)**:
+3. **YOLO Computer Vision Backend (`/yolo_backend`)**:
    * Built with: Python, FastAPI, Uvicorn, Ultralytics YOLOv8, and OpenCV.
-   * Port: 8000
+   * Port: `8000`
 
 ---
 
@@ -47,16 +47,16 @@ NagarBrain AI is structured as a microservices application:
 
 Configure the following files before running the application:
 
-### Node.js Backend (backend/.env)
-Create a .env file inside the backend/ directory:
+### Node.js Backend (`backend/.env`)
+Create a `.env` file inside the `backend/` directory:
 ```env
 PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/nagarbrain_traffic
 HF_API_TOKEN=your_hugging_face_token_here
 ```
 
-### React Frontend (frontend/.env)
-Create a .env file inside the frontend/ directory (or edit the pre-created template):
+### React Frontend (`frontend/.env`)
+Create a `.env` file inside the `frontend/` directory (or edit the pre-created template):
 ```env
 VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
@@ -85,7 +85,7 @@ Once installed, start the server:
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
-Check health on: http://localhost:8000/health
+Check health on: `http://localhost:8000/health`
 
 ### 2. Start Core Node.js Backend
 Navigate to the Node.js API server:
@@ -94,7 +94,7 @@ cd backend
 npm install
 npm start
 ```
-*Starts on: http://localhost:5000*
+*Starts on: `http://localhost:5000`*
 
 ### 3. Start React Frontend
 Navigate to the frontend client:
@@ -103,7 +103,7 @@ cd frontend
 npm install
 npm run dev
 ```
-*Starts on: http://localhost:5173 (Open this in your web browser)*
+*Starts on: `http://localhost:5173` (Open this in your web browser)*
 
 ---
 
